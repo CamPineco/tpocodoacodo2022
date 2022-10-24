@@ -13,7 +13,7 @@
     
     <header id="mainheader">
         <nav id="navbar">
-                 <a href="index.html">Home</a>
+                     <a href="index.html">Home</a>
                      <a href="artist.html">About me</a>
                      <a href="contact.html">Contacto</a>
                      <a href="galeria.html">Galería</a>
@@ -21,20 +21,21 @@
         </nav>
      </header>
 
+     
     <main>
 
-	   <form action="show-data.html" target="_blank">
+	   <form id="formulario" onsubmit="return validar();" >
           <fieldset>
-                <label for="nombre">Nombre: <sup>*</sup></label>
+                <label for="nombre">Nombre: <sup>*</sup></label> <label id="errornombre"></label>
                 <input type="text" name="nombre" id="nombre" placeholder="Ingresa aquí tu nombre"><br>
-
-                <label for="apellido">Apellido: </label>
+   
+                <label for="apellido">Apellido: </label> <label id="errorapellido" ></label>
                 <input type="text" name="apellido" id="apellido" placeholder="Ingresá aquí tu apellido"><br>
-
-                <label for="mail">Mail:</label>
+                 <label for="mail">Mail:</label> <label for="" id="errormail"></label>
                 <input type="email" name="mail" id="mail"><br>
 
-                <label for="base">Base/trabajo</label><br>
+                <label for="base">Base/trabajo</label> <label for="" id="errorradio"></label>
+                <br>
                 <input type="radio" name="option" value="1">Bastidor<br>
                 <input type="radio" name="option" value="2">Madera<br>
                 <input type="radio" name="option" value="2">Pirografía<br>
@@ -46,9 +47,10 @@
            </fieldset>
 
             <label for="comentarios">Detalles del pedido:</label><br>
+            <label for="" id="errorcomentarios"></label>
             <textarea name="comentarios" rows="5" cols="30" placeholder="Medidas, temática, ubicación, si es para regalo incluir fecha límite, etc"></textarea><br>
-
-            <label for="fecha">Hoy es</label><br>
+       
+            <label id="fecha" for="fecha">Hoy es</label><br>
             <input type="date" name="fecha" id="fecha"><br><br>
 
         
@@ -57,11 +59,11 @@
 
         </form>
 
-        <p>Si usted hace click en el boton "Enviar", la informacion sera enviada a la pagina "show_data.html".</p>
     </main>
 
     <footer>
         © Copyright 2022 Camila Pineda. Todos los derechos reservados.
     </footer>
+    <script src="./app.js"></script>
 </body>
 </html>

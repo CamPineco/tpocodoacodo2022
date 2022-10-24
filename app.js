@@ -1,29 +1,59 @@
-function validar (){
+function validar(){
+    
     let nombre = document.getElementById('nombre').value;
     let apellido = document.getElementById('apellido').value;
-    let comentarios = document.getElementsByName('comentarios').value;
-    let fecha = document.getElementById('fecha').value;
-    
-    if (nombre == null || nombre.length == 0 
-        || apellido == null || apellido.length == 0) {
+
+    if (nombre == null || nombre.length == 0){
             //alert('este campo esta vacio')
-        console.log('campo vacio debe completar Nombre o apellido')
-        document.getElementById('mensaje').innerHTML="campo/s vacio/s debe completar Nombre o apellido"        
+        console.log('campo vacio debe completar Nombre');
+        document.getElementById('errornombre').innerHTML="campo vacio debe completar Nombre/s"; 
+        nombre.focus();      
+        return false;
+    } 
+    if (apellido == null || apellido.length == 0){
+        //alert('este campo esta vacio')
+    console.log('campo vacio debe completar Apellido');
+    document.getElementById('errorapellido').innerHTML="campo vacio debe completar Apellido/s"; 
+    apellido.focus();
+    return false;     
 
     } 
-    // redudante cuando chequeamos la longitud ya sabemos si es una cadena vacia
-    // pero por ahora lo dejo asi despues lo saco 
-    if (fecha == null || fecha.length ==0 || fecha== "" ){
-        console.log('por favor completar fecha')
-        alert('por favor completar fecha')
-        document.getElementById('fecha').innerHTML="completar fecha"
-    } 
+
+    mail = document.getElementById("mail").value;
+            
+              
+    if (!(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail|edu)\.(?:|com|ar)+$/.test(mail)))
+    {
+        document.getElementById('errormail').innerHTML = "No es una direccion de email correcta" ;
+        
+        mail = document.getElementById('mail');
+        mail.value = '';
+        mail.focus();
+        return false;
     
-    if (comentarios == undefined || comentarios.length == 0){
-        alert('debe tener algun comentario ?? ')
-        console.log('debe tener algun comentario ?? ')
-        document.getElementById('aviso sin comentarios').innerHTML="debe tener algun comentario ?? " 
     }
 
-    
+
+    opciones = document.getElementsByName("option");
+
+    var seleccionado = false;
+    for(var i=0; i < opciones.length; i++) 
+    {
+        if(opciones[i].checked) 
+        {
+            seleccionado = true;
+            break;
+        }
+    }
+
+    if(!seleccionado) 
+    {
+        document.getElementById('errorradio').innerHTML = "Debe seleccionar una Opcion" ;
+        return false;
+    }
+
+        document.getElementById('errorapellido').innerHTML=""; 
+        document.getElementById('errornombre').innerHTML=""; 
+        return true;
 }
+

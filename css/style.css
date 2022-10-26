@@ -1,98 +1,608 @@
-/* -y este codigo?
-- lo cree, estaba aqui, es chiquito y esta roto, pero es bueno, si, muy bueno
-kjj basta de joda loco */
-
-
 *{
     font-family: 'Poppins', sans-serif;
 }
+/* Pendiente: Arreglar el footer, arreglar los a:href del logo y las imagenes */
 
-/*en about me y en project no le puedo poner el texto en negro kjj*/
 
-h1{
-    font-size: 10vh;
-    font-weight: 10vw;
-    text-align: center;
+
+/* Estilos para Monitor */
+
+@media screen and (min-width: 1280px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        min-height: 100vh;
+        background: white;
+        
+    }
+    
+/* Elementos del HEADER */
+
+    header{
+        display: inline-flex;
+        /* border: 2px solid black; */
+        height: 10vh;
+        margin-bottom: 0.2rem;
+        width: 100%;
+        justify-content: center;
+
+
+
+    }
+
+    .header-logo{
+        /* border: 2px solid blue; */
+        width: 10%;
+    }
+
+    .header-logo>a>img {
+        height: 100%;
+        width: 50%;
+        object-fit: cover;
+        border-radius: 5%;
+    }
+
+    .spacing-logo{
+        /* border: 2px solid blue; */
+        width: 10%;
+    }
+
+    .menu-bar{
+        /* border: 2px solid blue; */
+        width: 50%;
+        align-self: center;
+        background-color: white;
+        box-shadow: 0 0 0.5rem rgba(0,0,0,30%);
+        border-radius: 10px;
+
+    }
+
+    #menu, #menu-check{
+        display: none;
+    }
+
+    .menu-bar ul{
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        padding: 0.5rem;
+        font-size: large;
+        font-weight: 200;
+        
+    }
+
+    .menu-link:link{
+        color: black;
+        text-decoration: none;
+    }
+
+    .menu-link:visited {
+        color:black
+    }
+
+    .menu-link:hover{
+        background-color: #d4ccbe;
+    }
+
+    /* Elementos del MAIN */
+
+    main {
+        /* border: 2px solid black; */
+
+        width: 80%;
+        align-self: center;
+
+    }
+
+    .title-bar{
+        /* border: 2px solid red; */
+        height: 8%;
+        margin-bottom: 0.2rem;
+        text-align: center;
+    }
+/* Contenedor y elementos de la Galeria */
+   
+    .card-container{
+        /* border: 2px solid green; */
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 360px;
+        padding: 20px;
+        grid-gap: 2px;
+        background-color: black;
+    }
+    /* Gatito */
+    .card:nth-child(1){
+        grid-row-start: span 2;
+        grid-column-start: span 2;
+    }
+    /* Ilustración 2 */
+    .card:nth-child(2){
+        grid-row-start: span 2;
+        grid-column-start: span 2;
+    }
+    /* Eddie */
+    .card:nth-child(3){
+        grid-row-start: span 2;
+        grid-column-start: span 2;
+    }
+    /* Elfa 1 */
+    .card:nth-child(4){
+        grid-row-start: span 2;
+        grid-column-start: span 2;
+    }
+    /* Elfa con manos */
+    .card:nth-child(5){
+        grid-row-start: span 2;
+        grid-column-start: span 2;
+    }
+    /* Ilustración 1 */
+    .card:nth-child(6){
+        grid-row-start: span 2;
+        grid-column-start:span 1;
+    }
+    /* Itachi */
+    .card:nth-child(7){
+        grid-row-start: span 2;
+        grid-column-start: span 1;
+    }
+
+    .card{
+        position: relative;
+        transition: all .2s ease-in-out;
+
+    }
+
+
+    .card-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .card:hover{
+        transform: scale(1.1);
+        z-index: 15;
+    }
+
+    .card-footer{
+        position: absolute;
+        bottom: 0;
+        color: white;
+        width: 100%;
+        height: 10%;
+        padding-top: 3em;
+        margin:0;
+        background: linear-gradient(rgba(255,255,255,0), black);
+        text-align: center;
+
+    }
+
+/* Elementos del Footer */
+
+    footer {
+        background-color: black;
+        text-align: center;
+        color: white;
+        height: 5vh;
+        min-height: auto;
+        width: 100%;
+        margin-top: 0.5rem;
+        
+    }
+
+}
+
+@media (min-width: 640px) and (max-width: 1280px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        min-height: 100vh;
+        background: white;
+        
+    }
+    
+/* Elementos del HEADER */
+
+    header{
+        display: inline-flex;
+        /* border: 2px solid black; */
+        height: 10vh;
+        margin-bottom: 0.2rem;
+        width: 100%;
+        justify-content: center;
+
+
+
+    }
+
+    .header-logo{
+        /* border: 2px solid blue; */
+        width: 10%;
+    }
+
+    .header-logo>a>img {
+        height: 100%;
+        width: 80%;
+        object-fit: cover;
+
+    }
+
+    .spacing-logo{
+        /* border: 2px solid blue; */
+        width: 0%;
+    }
+
+    .menu-bar{
+        /* border: 2px solid blue; */
+        width: 75%;
+        align-self: center;
+        background-color: white;
+        box-shadow: 0 0 0.5rem rgba(0,0,0,30%);
+        border-radius: 10px;
+
+    }
+
+    #menu, #menu-check{
+        display: none;
+    }
+
+    .menu-bar ul{
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        font-size: large;
+        font-weight: 200;
+        
+    }
+
+    .menu-link:link{
+        color: black;
+        text-decoration: none;
+    }
+
+    .menu-link:visited {
+        color:black
+    }
+
+    .menu-link:hover{
+        background-color: #d4ccbe;
+    }
+
+    /* Elementos del MAIN */
+
+    main {
+        /* border: 2px solid black; */
+
+        width: 80%;
+        align-self: center;
+
+    }
+
+    .title-bar{
+        /* border: 2px solid red; */
+        height: 8%;
+        margin-bottom: 0.2rem;
+        text-align: center;
+    }
+/* Contenedor y elementos de la Galeria */
+   
+    .card-container{
+        /* border: 2px solid green; */
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 200px;
+        padding: 20px;
+        grid-gap: 2px;
+        background-color: black;
+    }
+
+    .card{
+        grid-column-start: span 2;
+        grid-row-start: span 2;
+    }
+   
+
+    .card{
+        position: relative;
+        transition: all .2s ease-in-out;
+
+    }
+
+    .card:nth-child(7){
+        grid-row-start:span 2;
+        grid-column-start: span 4;
+    }
+
+    .card-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .card:hover{
+        transform: scale(1.15);
+        z-index: 15;
+    }
+
+    .card-footer{
+        position: absolute;
+        bottom: 0;
+        color: white;
+        width: 100%;
+        height: 10%;
+        padding-top: 3em;
+        margin:0;
+        background: linear-gradient(rgba(255,255,255,0), black);
+        text-align: center;
+
+    }
+
+/* Elementos del Footer */
+
+    footer {
+        background-color: black;
+        text-align: center;
+        color: white;
+        height: 5vh;
+        min-height: auto;
+        width: 100%;
+        margin-top: 0.5rem;
+        
+    }
+    
+
 }
 
 
+@media (max-width: 640px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        min-height: 100vh;
+        background: white;
+        
+    }
+    
+/* Elementos del HEADER */
 
-#navbar{
-    background-color: white;
-    text-align: center;
+    header{
+        display: flex-start;
+        /* border: 2px solid black; */
+        height: 10vh;
+        margin-bottom: 0.2rem;
+        width: 100%;
+        justify-content: inline;
+
+
+
+    }
+
+    .header-logo{
+        /* border: 2px solid blue; */
+        width: 10%;
+        display: none;
+    }
+
+
+    .menu-bar{
+        /* border: 2px solid blue; */
+        /* width: 50%; */
+        background-color: #d4ccbe;
+        box-shadow: 0 0 0.5rem rgba(0,0,0,30%);
+        border-radius: 10px;
+        place-content: space-between;
+        position: absolute;
+        top: 2.5em;
+        right: 2.5em;
+        padding-top: 0.5em;
+        padding-right: 0.5em;
+        opacity: 0.9;
+        color: black;
+        z-index: 999;
+
+
+        
+
+    }
+    #menu, #menu-check{
+        display: none;
+    }
+
+
+    #menu:hover{
+        filter: saturate(300%);
+
+        
+    }
+
+    #menu-cerrar{
+        display: none;
+    }
+
+    #menu-check:checked ~ label #menu-abrir {
+        display: none;
+    }
+
+    #menu-check:checked ~ label #menu-cerrar {
+        display: block;
+
+    }
+
+    
+    #menu-check:not(:checked) ~ .menu-bar{
+        display: none;
+    }
+
+    #menu-check:checked ~ .menu-bar{
+        display:block;
+    }
+
+    #menu{
+        display: block;
+        color:black;
+        background-color: rgb(255, 255, 255);
+        font-size: 1.5em;
+        font-weight: bold;
+        border-radius: 10%;
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        z-index: 9999;
+        
+
+    }
+
+    .menu-bar ul{
+        display: block;
+        list-style: none;
+        font-size: large;
+        font-weight: 200;
+        text-align: center;
+        
+    }
+    .menu-bar ul li, .menu-link{
+        display: block;
+        text-align: center;
+        padding-bottom: 0.5em;
+
+    }
+
+    .menu-link:link{
+        color: black;
+        text-decoration: none;
+    }
+
+    .menu-link:visited {
+        color:black
+    }
+
+    .menu-link:hover{
+        background-color: #ffffff;
+
+    }
+
+    /* Elementos del MAIN */
+
+    main {
+        /* border: 2px solid black; */
+
+        width: 80%;
+        align-self: center;
+
+    }
+
+    .title-bar{
+        /* border: 2px solid red; */
+        height: 8%;
+        margin-bottom: 0.2rem;
+        text-align: center;
+    }
+/* Contenedor y elementos de la Galeria */
+   
+    .card-container{
+        /* border: 2px solid green; */
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 200px;
+        padding: 20px;
+        grid-gap: 2px;
+        background-color: black;
+    }
+
+    .card:nth-child(1){
+
+        grid-row-start: span 2;
+    }
+    .card:nth-child(2){
+
+        grid-row-start: span 2;
+
+
+    }
+    .card:nth-child(3){
+
+        grid-row-start: span 2;
+
+    }
+
+    .card:nth-child(4){
+        grid-row-start: span 2;
+
+    }
+
+    .card:nth-child(5){
+        grid-row-start: span 2;
+
+    }
+
+    .card:nth-child(6){
+
+        grid-row-start: span 2;
+        
+        
+    }
+    .card:nth-child(7){
+        grid-row-start: span 2;
+        grid-column-start: span 1;
+    }
+
+    .card{
+        position: relative;
+        transition: all .2s ease-in-out;
+
+    }
+
+
+    .card-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .card:hover{
+        transform: scale(1.15);
+        z-index: 15;
+    }
+
+    .card-footer{
+        position: absolute;
+        bottom: 0;
+        color: white;
+        width: 100%;
+        height: 10%;
+        padding-top: 3em;
+        margin:0;
+        background: linear-gradient(rgba(255,255,255,0), black);
+        text-align: center;
+
+    }
+
+/* Elementos del Footer */
+
+    footer {
+        background-color: black;
+        text-align: center;
+        color: white;
+        height: 5vh;
+        min-height: auto;
+        width: 100%;
+        margin-top: 0.5rem;
+        
+    }
+
 }
-
-body{
-    margin: 0;
-    background-color: #fff7e9;
-    display: flex; /*para que me quede el footer abajo y no me de problemas*/
-    flex-direction: column;/*para que me quede el footer abajo y no me de problemas*/
-    min-height: 100vh; /*como minimo tiene que medir lo que mide el viewport*/
-}
-
-a {
-    display: inline-block;
-    justify-content: space-evenly;
-    text-decoration: none;
-  }
-  
-  a:link {
-    color: rgb(0, 0, 0);
-  }
-  
-  a:visited {
-    color: rgb(0, 0, 0);
-  }
-  
-  a:hover {
-    background: #d4ccbe;
-}
-
-.container{
-    display: flex;
-}
-
-.container, p{
-    color:black;
-}
-
-ul{
-    list-style: none;
-}
-
-/*la galeria esta rotisima, en un futuro deberia de linkearse con mercadolibre pero por
-ahora no me salio darle esa vista linda de galeria tipo cuadricula*/
-
-/*falta ver donde poner el video y como*/
-
-.caja{
-        width: 50vw;
-        height: 50vh;
-        border: black solid 2px;
-        flex-flow:wrap;
-}
-
-.caja, div, img{
-    width: 50vw;
-    height: 50vh;
-    flex-flow:wrap;
-}
-
-/*faltan animaciones, transiciones, etc etc, media queries etc etc puntos de corte aaAAA */
-
-/*falta darle un estilo, centrado y que no ocupe toda la pantalla al form de contact*/
-
-footer{
-    background-color: black;
-    padding: 1em 0;
-    text-align: center;
-    margin-top: auto; /*para que me quede el footer abajo y no me de problemas*/
-}
-
-
-/*lo saque porque si los mensajes de validacion que queria poner con p no me aparecen
-porque estan en blanco para mas adelante, lo modificamos des js al css 
-/*footer, p{
-    color:white;
-}
-  */

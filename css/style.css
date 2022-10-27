@@ -1,9 +1,13 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+
 /* Pendiente: Arreglar el footer, arreglar los a:href del logo y las imagenes */
 
+.video{
+    max-width: 100%;
 
+}
 
 /* Estilos para Monitor */
 
@@ -16,18 +20,17 @@
         background: white;
         
     }
-    
+        
 /* Elementos del HEADER */
 
     header{
         display: inline-flex;
         /* border: 2px solid black; */
         height: 10vh;
+        min-height: 100%;
         margin-bottom: 0.2rem;
         width: 100%;
         justify-content: center;
-
-
 
     }
 
@@ -38,15 +41,12 @@
 
     .header-logo>a>img {
         height: 100%;
-        width: 50%;
-        object-fit: cover;
+        width: 100%;
+        object-fit:contain;
         border-radius: 5%;
+        padding: 0.5rem;
     }
 
-    .spacing-logo{
-        /* border: 2px solid blue; */
-        width: 10%;
-    }
 
     .menu-bar{
         /* border: 2px solid blue; */
@@ -55,6 +55,7 @@
         background-color: white;
         box-shadow: 0 0 0.5rem rgba(0,0,0,30%);
         border-radius: 10px;
+        padding-top: 00.5em;
 
     }
 
@@ -186,13 +187,16 @@
 /* Elementos del Footer */
 
     footer {
-        background-color: black;
+        background-color: rgb(233, 223, 213);
         text-align: center;
-        color: white;
-        height: 5vh;
-        min-height: auto;
+        color: rgb(0, 0, 0);
+        min-height:fit-content;
+        justify-content: center;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
         width: 100%;
         margin-top: 0.5rem;
+        display: block;
         
     }
 
@@ -202,7 +206,7 @@
     body{
         display: flex;
         flex-direction: column;
-        justify-content:flex-end;
+        justify-content:space-between;
         min-height: 100vh;
         background: white;
         
@@ -229,8 +233,10 @@
 
     .header-logo>a>img {
         height: 100%;
-        width: 80%;
-        object-fit: cover;
+        width: 100%;
+        object-fit:contain;
+        border-radius: 5%;
+        padding: 0.5rem;
 
     }
 
@@ -352,13 +358,16 @@
 /* Elementos del Footer */
 
     footer {
-        background-color: black;
+        background-color: rgb(233, 223, 213);
         text-align: center;
-        color: white;
-        height: 5vh;
-        min-height: auto;
+        color: rgb(0, 0, 0);
+        min-height:fit-content;
+        justify-content: center;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
         width: 100%;
         margin-top: 0.5rem;
+        display: block;
         
     }
     
@@ -382,7 +391,7 @@
         display: flex-start;
         /* border: 2px solid black; */
         height: 10vh;
-        margin-bottom: 0.2rem;
+        margin-bottom: 5em;
         width: 100%;
         justify-content: inline;
 
@@ -595,13 +604,16 @@
 /* Elementos del Footer */
 
     footer {
-        background-color: black;
+        background-color: rgb(233, 223, 213);
         text-align: center;
-        color: white;
-        height: 5vh;
-        min-height: auto;
+        color: rgb(0, 0, 0);
+        min-height:fit-content;
+        justify-content: center;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
         width: 100%;
         margin-top: 0.5rem;
+        display: block;
         
     }
 

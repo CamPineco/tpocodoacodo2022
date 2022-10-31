@@ -39,45 +39,48 @@
 
      
     <main>
+        <div class="form-container">
+        <!-- Formulario de contacto -->
+            <form id="formulario" method="post" action="https://formsubmit.co/55d6b06426e3c2db61183563f6693cd2" onsubmit="return validar();" >
+                    <h3>Pedidos personalizados</h3>
+                    <p>Hacé tu consulta. Respondemos y cotizamos en menos de 48 hs</p>
+                <fieldset>
+                        <!-- Nombre -->
+                        <label for="nombre">Nombre: <sup>*</sup></label> <label id="errornombre"></label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa aquí tu nombre" ><br>
+                        <!-- Apellido -->
+                        <label for="apellido">Apellido: <sup>*</sup></label> <label id="errorapellido" ></label>
+                        <input type="text" name="apellido" id="apellido" placeholder="Ingresá aquí tu apellido" ><br>
+                        <!-- Email -->
+                        <label for="mail">Mail:<sup>*</sup></label> <label for="" id="errormail"></label>
+                        <input type="email" name="mail" id="mail" placeholder="Ingresá aquí tu e-mail" ><br>
+                        <!-- Tipo de trabajo -->
+                        <label for="base">Base/trabajo</label> <label for="" id="errorradio"></label>
+                        <br>
+                        <input type="radio" name="option" value="1">Bastidor<br>
+                        <input type="radio" name="option" value="2">Madera<br>
+                        <input type="radio" name="option" value="2">Pirografía<br>
+                        <input type="radio" name="option" value="3">Hoja enmarcada (tipo foto)<br>
+                        <input type="radio" name="option" value="3">Cartón firme (imprimado)<br>
+                        <input type="radio" name="option" value="4">Objeto a personalizar<br>
+                        <input type="radio" name="option" value="4">Arcilla<br>
+                        <input type="radio" name="option" value="4">Porcelana<br>
+                </fieldset>
+                    <!-- Detalles del pedido -->
+                    <label for="comentarios">Detalles del pedido:<sup>*</sup></label><br>
+                    <label for="" id="errorcomentarios"></label>
+                    <textarea name="comentarios" rows="5" cols="45" placeholder="Medidas, temática, ubicación, si es para regalo incluir fecha límite, etc"></textarea><br>
+                    <!-- Fecha del pedido -->
+                    <label id="fecha" for="fecha">Para cuando lo necesitás?</label><br>
+                    <input type="date" name="fecha" id="fecha"><br><br>
 
-	   <form id="formulario" onsubmit="return validar();" >
-            <h2>Pedidos personalizados</h2>
-            <p>Hacé tu consulta. Respondemos y cotizamos en menos de 48 hs</p>
-          <fieldset>
-                <label for="nombre">Nombre: <sup>*</sup></label> <label id="errornombre"></label>
-                <input type="text" name="nombre" id="nombre" placeholder="Ingresa aquí tu nombre"><br>
-   
-                <label for="apellido">Apellido: <sup>*</sup></label> <label id="errorapellido" ></label>
-                <input type="text" name="apellido" id="apellido" placeholder="Ingresá aquí tu apellido"><br>
-                 <label for="mail">Mail:<sup>*</sup></label> <label for="" id="errormail"></label>
-                <input type="email" name="mail" id="mail"><br>
-
-                <label for="base">Base/trabajo</label> <label for="" id="errorradio"></label>
-                <br>
-                <input type="radio" name="option" value="1">Bastidor<br>
-                <input type="radio" name="option" value="2">Madera<br>
-                <input type="radio" name="option" value="2">Pirografía<br>
-                <input type="radio" name="option" value="3">Hoja enmarcada (tipo foto)<br>
-                <input type="radio" name="option" value="3">Cartón firme (imprimado)<br>
-                <input type="radio" name="option" value="4">Objeto a personalizar<br>
-                <input type="radio" name="option" value="4">Arcilla<br>
-                <input type="radio" name="option" value="4">Porcelana<br>
-           </fieldset>
-
-            <label for="comentarios">Detalles del pedido:<sup>*</sup></label><br>
-            <label for="" id="errorcomentarios"></label>
-            <textarea name="comentarios" rows="5" cols="30" placeholder="Medidas, temática, ubicación, si es para regalo incluir fecha límite, etc"></textarea><br>
-       
-            <label id="fecha" for="fecha">Hoy es</label><br>
-            <input type="date" name="fecha" id="fecha"><br><br>
-
-        
-            <input type="submit" value="Enviar los datos">
-            <input type="reset" value="Cancelar el envio">
-
-        </form>
+                
+                    <input class="botonenvio" type="submit" value="Enviar los datos">
+                    <input class="botonenvio" type="reset" value="Reestablecer datos">
+            </form>
+        </div>
         <div id="dondeestamos">
-            <h2>Donde estamos?</h2>
+            <h3>Donde estamos?</h3>
             <p>Sí querés consultar en persona estamos en la feria de Parque Centenario.</p>
             <p>De lunes a domingos las 24 Hs. Si me ven durmiendo golpeen el cartón con unas palmadas.</p>
             <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13135.22900153279!2d-58.438259486986865!3d-34.609035241649785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1667161774839!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

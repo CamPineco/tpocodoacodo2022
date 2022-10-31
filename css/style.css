@@ -121,18 +121,48 @@
 
     }
 
-    #formulario{
+    .form-container{
         grid-column-start: 1;
         grid-column-end: 3;
-        /* border: solid blue 2px; */
+        padding: 1em;
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #formulario{
+        background-color: #f5eee2;
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        width: 90%;
+        border-radius: 10%;
+    }
+
+    #formulario h3{
+        color: darkblue;
+        }
+
+    #formulario input, #formulario textarea{
+        margin-bottom: 5px;
+        outline: none;
+        background: #ffffff;
+        font-size: 16px;
+
+    }
+
+    .botonenvio{
+        cursor: pointer;
     }
 
     #dondeestamos{
         grid-column-start: 4;
         grid-column-end: 6;
-        background-color: rgba(192, 191, 191, 0.316);
+        background-color: rgba(255, 248, 230, 0.68);
         padding: 1em;
-        border-radius: 0 10% 0 10%;
+        border-radius: 10%;
     }
 
     .title-bar{
@@ -341,11 +371,7 @@
     }
 
 
-    #formulario{
-        grid-column-start: span 2;
-        grid-column-end: 4;
-        /* border: solid blue 2px; */
-    }
+
     .video{
         grid-column-start: 1;
         grid-column-end: 5;
@@ -353,7 +379,50 @@
         width: 100%;    
 
     }
+    .form-container{
+        grid-column-start: 2;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    #formulario{
+        background-color: #f5eee2;
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        width: 90%;
+        border-radius: 10%;
+    }
+
+    #formulario h3{
+        color: darkblue;
+        }
+
+    #formulario input, #formulario textarea{
+        margin-bottom: 5px;
+        outline: none;
+        background: #ffffff;
+        font-size: 16px;
+
+    }
+
+    .botonenvio{
+        cursor: pointer;
+    }
+
+    #dondeestamos{
+        grid-column-start: 0;
+        background-color: rgba(255, 248, 230, 0.68);
+        padding: 1em;
+        border-radius: 10%;
+
+    }
+
+    #mapa{
+        max-width: 50vh;
+    }
 
     .title-bar{
         /* border: 2px solid red; */
@@ -575,6 +644,53 @@
         height: 8%;
         margin-bottom: 0.2em;
         text-align: center;
+    }
+
+
+    .form-container{
+        grid-column-start: 0;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #formulario{
+        background-color: #f5eee2;
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        width: 90%;
+        border-radius: 10%;
+    }
+
+    #formulario h3{
+        color: darkblue;
+        }
+
+    #formulario input, #formulario textarea{
+        margin-bottom: 5px;
+        outline: none;
+        background: #ffffff;
+        font-size: 16px;
+
+    }
+
+    .botonenvio{
+        cursor: pointer;
+    }
+
+    #dondeestamos{
+        grid-column-start: 0;
+        background-color: rgba(255, 248, 230, 0.68);
+        padding: 1em;
+        border-radius: 10%;
+
+
+    }
+
+    #mapa{
+        width: 80vw;
     }
 /* Contenedor y elementos de la Galeria */
    

@@ -7,7 +7,7 @@ function validar(){
             //alert('este campo esta vacio')
         console.log('campo vacio debe completar Nombre');
         document.getElementById('errornombre').innerHTML="campo vacio debe completar Nombre/s"; 
-        nombre.focus();      
+        nombre.focus();     
         return false;
     } 
     if (apellido == null || apellido.length == 0){
@@ -32,7 +32,14 @@ function validar(){
         return false;
     
     }
+    comentario = document.getElementById("comentarios").value;
 
+    if (comentario == null || comentario.length == 0){
+    alert('este campo esta vacio')
+    console.log('campo vacio debe completar su pedido');
+    document.getElementById('errorapellido').innerHTML="campo vacio debe completar Apellido/s"; 
+    apellido.focus();
+    return false;     }
 
     opciones = document.getElementsByName("option");
 

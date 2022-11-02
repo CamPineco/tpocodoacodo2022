@@ -1,66 +1,104 @@
-function validar(){
-    
-    let nombre = document.getElementById('nombre').value;
-    let apellido = document.getElementById('apellido').value;
+const form  = document.getElementsByTagName('form')[0];
 
-    if (nombre == null || nombre.length == 0){
-            //alert('este campo esta vacio')
-        console.log('campo vacio debe completar Nombre');
-        document.getElementById('errornombre').innerHTML="campo vacio debe completar Nombre/s"; 
-        nombre.focus();     
-        return false;
-    } 
-    if (apellido == null || apellido.length == 0){
-        //alert('este campo esta vacio')
-    console.log('campo vacio debe completar Apellido');
-    document.getElementById('errorapellido').innerHTML="campo vacio debe completar Apellido/s"; 
-    apellido.focus();
-    return false;     
+const email = document.getElementById('mail');
+const emailError = document.querySelector('#mail + span.error');
 
-    } 
+const nombre = document.getElementById("Nombre")
+const nombreError = document.querySelector('#Nombre + span.error');
 
-    mail = document.getElementById("mail").value;
-            
-              
-    if (!(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail|edu)\.(?:|com|ar)+$/.test(mail)))
-    {
-        document.getElementById('errormail').innerHTML = "No es una direccion de email correcta" ;
-        
-        mail = document.getElementById('mail');
-        mail.value = '';
-        mail.focus();
-        return false;
-    
-    }
-    comentario = document.getElementById("comentarios").value;
+const apellido = document.getElementById("Apellido")
+const apellidoError = document.querySelector('#Apellido + span.error');
 
-    if (comentario == null || comentario.length == 0){
-    alert('este campo esta vacio')
-    console.log('campo vacio debe completar su pedido');
-    document.getElementById('errorapellido').innerHTML="campo vacio debe completar Apellido/s"; 
-    apellido.focus();
-    return false;     }
+const comentario = document.getElementById('comentario');
+const comentarioError = document.querySelector('#comentario + span.error');
 
-    opciones = document.getElementsByName("option");
+const trabajos = document.getElementById('trabajos');
+const trabajosError = document.querySelector('#trabajos + span.error');
 
-    var seleccionado = false;
-    for(var i=0; i < opciones.length; i++) 
-    {
-        if(opciones[i].checked) 
-        {
-            seleccionado = true;
-            break;
-        }
-    }
+email.addEventListener('input', function (event) {
+  if (email.validity.valid) {
+    emailError.innerHTML = ''; 
+    emailError.className = 'error'; 
+  } else {
+    showErrorEmail();
+  }
+});
 
-    if(!seleccionado) 
-    {
-        document.getElementById('errorradio').innerHTML = "Debe seleccionar una Opcion" ;
-        return false;
-    }
+nombre.addEventListener('input', function (event) {
+  if (nombre.validity.valid) {
+    nombreError.innerHTML = ''; 
+    nombreError.className = 'error'; 
+  } else {
+    showErrorNombre();
+  }
+});
 
-        document.getElementById('errorapellido').innerHTML=""; 
-        document.getElementById('errornombre').innerHTML=""; 
-        return true;
+apellido.addEventListener('input', function (event) {
+  if (apellido.validity.valid) {
+    apellidoError.innerHTML = ''; 
+    apellidoError.className = 'error'; 
+  } else {
+    showErrorApellido();
+  }
+});
+
+
+form.addEventListener('submit', function (event) { 
+  if(!nombre.validity.valid){
+    showErrorNombre();
+    event.preventDefault();
+  } else if(!apellido.validity.valid){
+    showErrorApellido();
+    event.preventDefault();
+  } else if(!email.validity.valid){
+    showErrorEmail();
+    event.preventDefault();
+  }else if(!comentario.validity.valid){
+    showErrorComentario();
+    event.preventDefault();
+  }else if(document.getElementById("trabajos").value==-1){
+    trabajosError.textContent = 'Debe seleccionar una opción.'
+    event.preventDefault();}
+});
+
+
+function showErrorEmail() {
+  if(email.validity.valueMissing) {
+    emailError.textContent = 'Debe introducir una dirección de correo electrónico.';
+  } else if(email.validity.typeMismatch) {
+    emailError.textContent = 'El valor introducido debe ser una dirección de correo electrónico.';
+  } else if(email.validity.tooShort) {
+    emailError.textContent = 'El correo electrónico debe tener al menos '+mail.minLength+' caracteres; ha introducido solo '+mail.value.length+'.';
+  }
 }
+function showErrorNombre() {
+  if(nombre.validity.valueMissing) {
+    nombreError.textContent = 'Debe introducir un nombre.';
+  } else if(nombre.validity.patternMismatch) {
+    nombreError.textContent = 'Solo se deben utilizar minúsculas y mayúsuculas.';
+  } else if(nombre.validity.tooShort) {
+    nombreError.textContent = 'El Nombre debe tener al menos '+nombre.minLength+' carácteres; ha introducido solo '+nombre.value.length+'.';
+  }
+}
+
+function showErrorApellido() {
+  if(apellido.validity.valueMissing) {
+    apellidoError.textContent = 'Debe introducir un apellido.';
+  } else if(apellido.validity.patternMismatch) {
+    apellidoError.textContent = 'Solo se deben utilizar minúsculas y mayúsuculas.';
+  } else if(apellido.validity.tooShort) {
+    apellidoError.textContent = 'El Apellido debe tener al menos '+apellido.minLength+' carácteres; ha introducido solo '+apellido.value.length+'.';
+  }
+}
+
+function showErrorComentario() {
+  if(comentario.validity.valueMissing) {
+    comentarioError.textContent = 'Debe introducir un un comentario.';
+  }
+}
+
+  emailError.className = 'error activo';
+  nombreError.className = 'error activo';
+  apellidoError.className = 'error activo';
+  trabajosError.className = 'error activo';
 

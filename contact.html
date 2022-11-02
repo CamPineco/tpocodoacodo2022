@@ -43,35 +43,54 @@
     <main>
         <div class="form-container">
         <!-- Formulario de contacto -->
-            <form id="formulario" method="post" action="https://formsubmit.co/55d6b06426e3c2db61183563f6693cd2" onsubmit="return validar();" >
+            <form id="formulario" method="post" action="https://formsubmit.co/55d6b06426e3c2db61183563f6693cd2" novalidate>
                     <h3>Pedidos personalizados</h3>
                     <p>Hacé tu consulta. Respondemos y cotizamos en menos de 48 hs</p>
                 <fieldset>
-                        <!-- Nombre -->
-                        <label for="nombre">Nombre: <sup>*</sup></label> <label id="errornombre"></label>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ingresa aquí tu nombre" ><br>
-                        <!-- Apellido -->
-                        <label for="apellido">Apellido: <sup>*</sup></label> <label id="errorapellido" ></label>
-                        <input type="text" name="apellido" id="apellido" placeholder="Ingresá aquí tu apellido" ><br>
-                        <!-- Email -->
-                        <label for="mail">Mail:<sup>*</sup></label> <label for="" id="errormail"></label>
-                        <input type="email" name="mail" id="mail" placeholder="Ingresá aquí tu e-mail" ><br>
-                        <!-- Tipo de trabajo -->
-                        <label for="base">Base/trabajo</label> <label for="" id="errorradio"></label>
-                        <br>
-                        <input type="radio" name="option" value="1">Bastidor<br>
-                        <input type="radio" name="option" value="2">Madera<br>
-                        <input type="radio" name="option" value="2">Pirografía<br>
-                        <input type="radio" name="option" value="3">Hoja enmarcada (tipo foto)<br>
-                        <input type="radio" name="option" value="3">Cartón firme (imprimado)<br>
-                        <input type="radio" name="option" value="4">Objeto a personalizar<br>
-                        <input type="radio" name="option" value="4">Arcilla<br>
-                        <input type="radio" name="option" value="4">Porcelana<br>
+                    <p>
+                        <label for="Nombre">
+                            <span>Nombre: </span>
+                            <input type="text" id="Nombre" name="Nombre" required minlength="3" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s]+">
+                            <span class="error" aria-live="polite"></span>
+                          </label>
+                        </p>
+                        <p>
+                          <label for="Apellido">
+                              <span>Apellido: </span>
+                              <input type="text" id="Apellido" name="Apellido" required minlength="3" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s]+">
+                              <span class="error" aria-live="polite"></span>
+                            </label>
+                          </p>
+                        <p>
+                          <label for="mail">
+                            <span>Dirección de correo electrónico: </span>
+                            <input type="email" id="mail" name="mail" required minlength="8">
+                            <span class="error" aria-live="polite"></span>
+                          </label>
+                        </p>
+                        <p>
+                          <label for="trabajos">Elegí un material de trabajo</label>
+                          <select name="trabajos" id="trabajos" required>
+                              <option name="option" value="-1">--Que material de trabajo querés?--</option>
+                              <option name="option" value="bastidor">Bastidor</option>
+                              <option name="option" value="madera">Madera</option>
+                              <option name="option" value="pirografia">Pirografía</option>
+                              <option name="option" value="enmarcada">Hoja enmarcada (tipo foto)</option>
+                              <option name="option" value="carton">Cartón firme (imprimado)</option>
+                              <option name="option" value="arcilla">Arcilla</option>
+                              <option name="option" value="porcelana">Porcelana</option>
+                              <option name="option" value="objeto">Objeto a personalizar</option>
+                              
+                          </select>
+                          <span class="error" aria-live="polite"></span>
+                        </p>
+                        <p>
+                          <label for="comentario">Deja un mensaje</label>
+                          <textarea id="comentario" name="comentario" maxlength="240" rows="5" required placeholder="Medidas, temática, ubicación, si es para regalo"></textarea>
+                          <span class="error" aria-live="polite"></span>
+                        </p>
                 </fieldset>
-                    <!-- Detalles del pedido -->
-                    <label for="comentarios">Detalles del pedido:<sup>*</sup></label><br>
-                    <label for="" id="errorcomentarios"></label>
-                    <textarea name="comentarios" rows="5" cols="45" placeholder="Medidas, temática, ubicación, si es para regalo incluir fecha límite, etc"></textarea><br>
+                    
                     <!-- Fecha del pedido -->
                     <label id="fecha" for="fecha">Para cuando lo necesitás?</label><br>
                     <input type="date" name="fecha" id="fecha"><br><br>
@@ -96,6 +115,6 @@
         <a href="https://www.twitter.com"><i class="fa-brands fa-lg fa-bounce fa-twitter"></i></a>
       <p> © Copyright 2022 Camila Pineda. Todos los derechos reservados.</p>
     </footer>
-    <script src="./app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
